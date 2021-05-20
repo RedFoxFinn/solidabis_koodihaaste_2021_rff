@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](///compare/v0.1.2...v0.1.3) (2021-05-20)
+
+
+### Features
+
+* added css-files, app- & component-files, modified index.html 08204e6
+
 ### [0.1.2](///compare/v0.1.1...v0.1.2) (2021-05-20)
 
 
