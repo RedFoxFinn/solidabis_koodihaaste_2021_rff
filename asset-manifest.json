@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/solidabis_koodihaaste_2021_rff/static/css/main.30595185.chunk.css",
+    "main.js": "/solidabis_koodihaaste_2021_rff/static/js/main.257e921d.chunk.js",
+    "main.js.map": "/solidabis_koodihaaste_2021_rff/static/js/main.257e921d.chunk.js.map",
+    "runtime-main.js": "/solidabis_koodihaaste_2021_rff/static/js/runtime-main.688331da.js",
+    "runtime-main.js.map": "/solidabis_koodihaaste_2021_rff/static/js/runtime-main.688331da.js.map",
+    "static/js/2.99726aef.chunk.js": "/solidabis_koodihaaste_2021_rff/static/js/2.99726aef.chunk.js",
+    "static/js/2.99726aef.chunk.js.map": "/solidabis_koodihaaste_2021_rff/static/js/2.99726aef.chunk.js.map",
+    "static/js/3.0dc935ef.chunk.js": "/solidabis_koodihaaste_2021_rff/static/js/3.0dc935ef.chunk.js",
+    "static/js/3.0dc935ef.chunk.js.map": "/solidabis_koodihaaste_2021_rff/static/js/3.0dc935ef.chunk.js.map",
+    "index.html": "/solidabis_koodihaaste_2021_rff/index.html",
+    "static/css/main.30595185.chunk.css.map": "/solidabis_koodihaaste_2021_rff/static/css/main.30595185.chunk.css.map",
+    "static/js/2.99726aef.chunk.js.LICENSE.txt": "/solidabis_koodihaaste_2021_rff/static/js/2.99726aef.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.688331da.js",
+    "static/js/2.99726aef.chunk.js",
+    "static/css/main.30595185.chunk.css",
+    "static/js/main.257e921d.chunk.js"
+  ]
+}
