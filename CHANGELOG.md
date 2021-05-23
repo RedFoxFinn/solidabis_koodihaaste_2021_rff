@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.1.5...v0.1.6) (2021-05-23)
+
+
+### Bug Fixes
+
+* package.json fix ([8c2fe34](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/commit/8c2fe342e4a3fbef78eb72d85c4db0dd8e2709ff))
+
 ### [0.1.5](///compare/v0.1.4...v0.1.5) (2021-05-23)
 
 ### [0.1.4](///compare/v0.1.3...v0.1.4) (2021-05-21)
