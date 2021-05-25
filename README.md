@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Solidabiksen koodihaaste 2021 - Solidabis code challenge 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Page version](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/dev/package.json&query=version&color=008080&label=version)
+![Test Status](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/workflows/CICD/badge.svg?branch=dev)
+[![codecov](https://codecov.io/gh/RedFoxFinn/solidabis_koodihaaste_2021_rff/branch/dev/graph/badge.svg?token=PFANDMCHX4)](https://codecov.io/gh/RedFoxFinn/solidabis_koodihaaste_2021_rff)
 
-## Available Scripts
+## Projektista - About project
 
-In the project directory, you can run:
+### FI: 
 
-### `yarn start`
+Oma toteutus vuoden 2021 Solidabiksen koodihaasteeseen.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Sivu on koodattu käyttämällä kielenä JavaScriptiä sekä merkittävimpinä kirjastoina Reactia ja React Routeria.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Testtaukset on toteutettu hyödyntämällä Jestiä ja React Testing Librarya.
 
-### `yarn test`
+Testit ajetaan komennolla `yarn test`, joka käynnistää React Scriptsin komennon `test` CLI-valinnoilla.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+GitHub Actionsissa testit ajetaan komennolla `yarn ci`, joka käynnistää React Scriptsin komennon `test` hiukan erilaisilla CLI-valinnoilla (mm. CI=true).
 
-### `yarn build`
+GitHub Actions ajaa testit, lataa testien kattavuusraportit [Codecov-palveluun](https://codecov.io), jonka jälkeen README.md saa päivitetyn statusilmaisimen testien kattavuudesta. Statusilmaisin `CICD` päivittyy jokaisen Github Actions workflown ajon päätteeksi: testit saavat joko statuksen `passing` tai `failing`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Mikäli testit menevät läpi, GH Actions workflow luo uuden tuotantokelpoisen version sovelmasta ja lataa sen `gh-pages` branchiin sivun tuotantoversiona.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Jokaisella branchiin `dev` lataamisella `version`-statusilmaisin saa uuden, päivitetyn, versionumeron.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### EN: 
 
-### `yarn eject`
+My take on Solidabis code challenge of the year 2021.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Page was built mainly with JS, ReactJS and React Router.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Testing is done with Jest & React Testing Library.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Tests are run with command `yarn test` triggering React Scripts command `test` with some CLI options.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+On GitHub Actions tests are run with command `yarn ci` triggering React Scripts command `test` but with altered CLI options (ie. CI=true).
 
-## Learn More
+GitHub Actions runs tests, uploads coverage reports to [Codecov](https://codecov.io) and README.md gets updated coverage status badge. Status badge `tests` gets updated on every workflow run: tests either get status `passing` or `failing`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If the tests are passing, GH Actions workflow then creates production build and deploys that build to `gh-pages` branch as production ready page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+On every push to GH branch dev status badge labeled `version` gets updated to new version number.

@@ -7,10 +7,12 @@ import {
 
 import Header from './components/header';
 import language from './tools/language';
+import {CalculatorProvider} from './controllers/calculator';
 import packageinfo from '../package.json';
 import './styles/components.css';
 import './styles/global.css';
 import Navigation from './components/navigation';
+import Calculator from './components/calculator';
 
 const App = (props) => {
   const [lang, setLang] = useState();
@@ -23,13 +25,15 @@ const App = (props) => {
     }
   },[]);
 
-  return <Router>
-    <Header language={lang} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
-    <Navigation language={lang}/>
-    <Switch>
-      <Route exact path='/' children={<React.Fragment><h1>home</h1></React.Fragment>} />
-      <Route path='/task' children={<React.Fragment><h1>task</h1></React.Fragment>} />
-    </Switch>
+  return <Router id={`${props.id}`}>
+    <CalculatorProvider>
+      <Header language={lang} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
+      <Navigation language={lang}/>
+      <Switch>
+        <Route exact path='/' children={<React.Fragment><Calculator/></React.Fragment>} />
+        <Route path='/task' children={<React.Fragment><h1>task</h1></React.Fragment>} />
+      </Switch>
+    </CalculatorProvider>
   </Router>;
 };
 
