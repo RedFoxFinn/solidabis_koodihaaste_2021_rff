@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.1.7...v0.2.0) (2021-05-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **calculator.jsx, car.jsx:** lisätty Calculator.jsx, Car.jsx sekä työkalu idGen.js.
+
+### Features
+
+* **calculator.jsx, car.jsx:** lisätty matkan asettamisen kenttä ja auton ensimmäinen versio; ([83a81af](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/commit/83a81aff9ea008ff3e005717488e54585bc19ea3))
+
 ### [0.1.7](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.1.6...v0.1.7) (2021-05-23)
 
 
