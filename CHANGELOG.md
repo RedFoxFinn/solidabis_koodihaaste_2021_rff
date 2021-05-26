@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.2.0...v0.2.1) (2021-05-26)
+
+
+### Features
+
+* added custom react hook to follow window size ([2a298dd](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/commit/2a298dd8f096887317a0269dbffdaec14c0bb9c3))
+
 ## [0.2.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.1.7...v0.2.0) (2021-05-25)
 
 
