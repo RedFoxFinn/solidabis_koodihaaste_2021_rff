@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.2.2...v0.3.0) (2021-05-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **calculator, car:** laskurimuutoksia
+
+### Features
+
+* **calculator, car:** lisätty matka-ajan laskentaan paranneltu versio, muotoiluja ([5ccb1dd](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/commit/5ccb1dd536a263063bf88fe3d6ffb432298418e8))
+
 ### [0.2.2](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.2.1...v0.2.2) (2021-05-26)
 
 ### [0.2.1](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.2.0...v0.2.1) (2021-05-26)
