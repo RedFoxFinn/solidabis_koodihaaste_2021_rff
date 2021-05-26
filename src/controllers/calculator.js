@@ -1,17 +1,16 @@
 import React, {useContext, useReducer} from 'react';
 
 const actions = [
-  'SET_SPEED',
   'SET_DISTANCE',
-  'RESET_SPEED',
   'RESET_DISTANCE',
-  'RESET_ALL'
+  'RESET_ALL',
+  'SET_DETAILED_TIME_ESTIMATE'
 ];
 
 const createInitialState = () => {
   return {
     distance: 1,
-    speed: 1
+    detailed: false
   };
 };
 
@@ -19,11 +18,10 @@ const CalculatorContext = React.createContext();
 
 const calculatorReducer = (state, action) => {
   switch (action.type) {
-    case actions[0]: return {...state, speed: action.speed};
-    case actions[1]: return {...state, distance: action.distance};
-    case actions[2]: return {...state, speed: 0};
-    case actions[3]: return {...state, distance: 0};
-    case actions[4]: return createInitialState();
+    case actions[0]: return {...state, distance: action.distance};
+    case actions[1]: return {...state, distance: 1};
+    case actions[2]: return createInitialState();
+    case actions[3]: return {...state, detailed: action.setDetailed};
     default: return state;
   }
 };

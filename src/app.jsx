@@ -27,7 +27,7 @@ const App = (props) => {
     }
   },[]);
 
-  return <article style={{height: height, width: width, marginLeft: '1em', marginRight: '1em'}}>
+  return <article style={{height: height, width: width, margin: '1em'}}>
     <Router id={`${props.id}`}>
       <CalculatorProvider>
         <Header language={lang} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />

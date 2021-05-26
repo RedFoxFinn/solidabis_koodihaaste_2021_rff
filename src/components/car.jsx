@@ -1,50 +1,61 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import {useCalculator, actions} from '../controllers/calculator';
+import {useCalculator} from '../controllers/calculator';
 import language from '../tools/language';
+import '../styles/components.css';
 
 const consumption_gradient = 1.009;
 
-const SpeedSelector = () => {
-  const {dispatch, state} = useCalculator();
+const SpeedSelector = ({speed, setSpeed}) => {
   const handleSpeed = (event) => {
     event.preventDefault();
-    dispatch({type: actions[0], speed: event.target.value});
+    setSpeed(event.target.value);
   };
-  return <form>
-    <label for='speedSelector' >Auton nopeus</label>
-    <input id='speedSelector' type='number' min={0} max={320} value={state.speed} onChange={event => handleSpeed(event)} />
+  return <form className='selector'>
+    <label htmlFor='speedSelector' >Aseta auton nopeus (km/h)</label>
+    <input id='speedSelector' type='number' min={0} max={320} value={speed} onChange={event => handleSpeed(event)} />
   </form>;
 };
 
-const TimeEstimate = () => {
+const TimeEstimate = ({speed}) => {
   const {state} = useCalculator();
-  const estimate = state.distance/state.speed;
-  if (state.distance > 0 && state.speed > 0) {
-    return <p>Matka-aika: ~ {estimate >= 1
-      ? Math.round((estimate+Number.EPSILON)*10)/10
-      : Math.round(((estimate*60)+Number.EPSILON)*10)/10} {estimate >= 1
-        ? 'h'
-        : 'min'}</p>;
+  if (state.distance > 0 && speed > 0) {
+    const roughEstimate = state.distance/speed;
+    const shorthand = Math.round((roughEstimate+Number.EPSILON)*100)/100;
+    const [hours, minutes] = shorthand.toString().split('.');
+    return <section className='estimate'>
+        <p>Matka-aika:</p>
+        {!state.detailed
+          ? <p>~ {hours ?? 0} h {Math.round(((parseFloat(`0.${minutes}`)*60)+Number.EPSILON)*1)/1 ?? 0} min</p>
+          : <p>~ {shorthand ?? 0} h</p>}
+      </section>;
   } else {
-    return <p>{language.checkLang() === 'en'
-      ? 'Set speed and distance for travel time calculations.'
-      : 'Aseta nopeus ja matkan pituus matka-ajan laskemiseksi.'}</p>;
+    return <section className='estimate'>
+      <p>{language.checkLang() === 'en'
+        ? 'Set speed and distance for travel time calculations.'
+        : 'Aseta nopeus ja matkan pituus matka-ajan laskemiseksi.'}</p>
+    </section>;
   }
 };
 
-const ConsumptionEstimate = ({baseConsumption}) => {
+const ConsumptionEstimate = ({baseConsumption, speed}) => {
   const {state} = useCalculator();
   let consumption = baseConsumption;
-  if (state.speed > 1) {
-    for (let s = 0; s < state.speed -1; s++) {
+  if (speed > 1) {
+    for (let s = 0; s < speed -1; s++) {
       consumption *= consumption_gradient;
     }
   }
-  if (state.distance > 0 && state.speed > 0) {
+  if (state.distance > 0 && speed > 0) {
     return <React.Fragment>
-      <p id='averageConsumption'>Keskikulutus: {state.speed > 1 && '~ '}{Math.round((consumption+Number.EPSILON)*100)/100} l / 100km</p>
-      <p id='tripConsumption'>Matkan kulutus: ~ {Math.round(((state.distance/100 * consumption)+Number.EPSILON)*100)/100} l</p>
+      <section className='estimate'>
+        <p id='tripAverageConsumptionLabel'>Matkan keskikulutus: </p>
+        <p id='tripAverageConsumption'>{speed > 1 && '~ '}{Math.round((consumption+Number.EPSILON)*100)/100} l / 100km</p>
+      </section>
+      <section className='estimate'>
+        <p id='tripConsumptionLabel'>Matkan kokonaiskulutus: </p>
+        <p id='tripConsumption'>~ {Math.round(((state.distance/100 * consumption)+Number.EPSILON)*100)/100} l</p>
+      </section>
     </React.Fragment>;
   } else {
     return <p>{language.checkLang() === 'en'
@@ -55,17 +66,25 @@ const ConsumptionEstimate = ({baseConsumption}) => {
 
 const Car = (props) => {
   const {
-    carId,
+    id,
     consumption,
     name
   } = props;
+  const [speed, setSpeed] = useState(1);
+  const lang = language.checkLang();
 
-  return <article id={carId}>
-    <p>Auto: {name}</p>
-    <p>Kulutus: {consumption} l / 100km</p>
-    <SpeedSelector/>
-    <TimeEstimate/>
-    <ConsumptionEstimate baseConsumption={consumption}/>
+  return <article id={`${id}`} className='car'>
+    <section className='data'>
+      <p>Auto: </p>
+      <p>{lang === 'en' ? name[1] : name[0]}</p>
+    </section>
+    <section className='data'>
+      <p>Ilmoitettu keskikulutus: </p>
+      <p>{consumption} l / 100km</p>
+    </section>
+    <SpeedSelector setSpeed={setSpeed} speed={speed} />
+    <TimeEstimate speed={speed} />
+    <ConsumptionEstimate speed={speed} baseConsumption={consumption}/>
   </article>;
 };
 

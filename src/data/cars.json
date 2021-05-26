@@ -1,0 +1,19 @@
+{
+  "cars": [
+    {
+      "id": "car.default.a",
+      "name": ["Auto A", "Car A"],
+      "consumption": 3
+    },
+    {
+      "id": "car.default.b",
+      "name": ["Auto B", "Car B"],
+      "consumption": 3.5
+    },
+    {
+      "id": "car.default.c",
+      "name": ["Auto C", "Car C"],
+      "consumption": 4
+    }
+  ]
+}

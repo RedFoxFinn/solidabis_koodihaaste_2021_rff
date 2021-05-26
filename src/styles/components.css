@@ -14,10 +14,60 @@
   width: 40%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .navigation a {
   display: block;
   margin-left: 1em;
+}
+
+.selector {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 16em;
+  justify-content: space-between;
+}
+
+.selector input {
+  width: 4em;
+  text-align: center;
+  background-color: rgba(200,200,200,0.3);
+  outline-style: none;
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 0.25em;
+}
+
+.data {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 16em;
+  justify-content: space-between;
+}
+
+.estimate {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 16em;
+  justify-content: space-between;
+}
+
+.car {
+  display: block;
+  margin: 0.5em 1em;
+  outline: 1px solid rgba(0,0,0,0.1);
+}
+
+.car:hover {
+  outline: 1px solid rgba(0,0,0,0.5);
+}
+
+.carList {
+  display: inline-flex;
 }
