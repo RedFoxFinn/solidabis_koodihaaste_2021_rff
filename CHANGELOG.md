@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.3.0...v0.4.0) (2021-05-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* minor component refactoring, tooling
+
+### Features
+
+* started building tests; testing component; modified components & styling; ([6644496](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/commit/66444967d80ff2a04a668a27f9f53568da174ba9))
+
 ## [0.3.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.2.2...v0.3.0) (2021-05-26)
 
 
