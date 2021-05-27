@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 function getWindowDimensions() {
   const height = window.innerHeight;
-  const width = document.clientWidth;
+  const width = window.screen.width;
   return {
     width,
     height

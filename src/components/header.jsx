@@ -2,13 +2,24 @@ import React from 'react';
 
 import wrapTextDev from '../tools/wrapTextDev';
 
-const title = ['Solidabis code challenge 2021', 'Solidabiksen koodihaaste 2021'];
+export const title = ['Solidabis code challenge 2021', 'Solidabiksen koodihaaste 2021'];
+
+function generateId(idFor, base) {
+  switch (idFor) {
+    case 'link':
+      return `${base}.authorUrl`;
+    case 'title':
+      return `${base}.title`;
+    default:
+      break;
+  }
+}
 
 const Header = (props) => {
-  const {authorName, authorUrl, language} = props;
-  return <section className='header'>
-    <p>{language === 'en' ? title[0] : title[1]}</p>
-    <a href={authorUrl}>{wrapTextDev(authorName)}</a>
+  const {authorName, authorUrl, language, id} = props;
+  return <section className='header' id={`${id}`} data-testid={`${id}`}>
+    <p id={generateId('title', id)} >{language === 'en' ? title[0] : title[1]}</p>
+    <a id={generateId('link', id)} data-testid={generateId('link', id)} href={authorUrl}>{wrapTextDev(authorName)}</a>
   </section>;
 };
 

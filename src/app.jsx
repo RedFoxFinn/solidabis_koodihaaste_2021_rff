@@ -14,6 +14,7 @@ import './styles/global.css';
 import Navigation from './components/navigation';
 import Calculator from './components/calculator';
 import useWindowDimensions from './hooks/windowDimensionsHook';
+import idGen from './tools/idGen';
 
 const App = (props) => {
   const { height, width } = useWindowDimensions();
@@ -27,13 +28,17 @@ const App = (props) => {
     }
   },[]);
 
-  return <article style={{height: height, width: width, margin: '1em'}}>
+  function isMobile() {
+    return width >= 720 ? false : true;
+  }
+
+  return <article className='app' style={{height: height, maxWidth: width}}>
     <Router id={`${props.id}`}>
       <CalculatorProvider>
-        <Header language={lang} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
-        <Navigation language={lang}/>
+        <Header id={`${idGen(props.id, 'header')}`} language={lang} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
+        <Navigation language={lang} id={idGen(props.id, 'navigator')} />
         <Switch>
-          <Route exact path='/' children={<React.Fragment><Calculator/></React.Fragment>} />
+          <Route exact path='/' children={<React.Fragment><Calculator mobile={isMobile()}/></React.Fragment>} />
           <Route path='/task' children={<React.Fragment><h1>task</h1></React.Fragment>} />
         </Switch>
       </CalculatorProvider>

@@ -11,7 +11,7 @@ const SpeedSelector = ({speed, setSpeed}) => {
     event.preventDefault();
     setSpeed(event.target.value);
   };
-  return <form className='selector'>
+  return <form className='selector' style={{marginLeft: '1em'}}>
     <label htmlFor='speedSelector' >Aseta auton nopeus (km/h)</label>
     <input id='speedSelector' type='number' min={0} max={320} value={speed} onChange={event => handleSpeed(event)} />
   </form>;
@@ -58,10 +58,25 @@ const ConsumptionEstimate = ({baseConsumption, speed}) => {
       </section>
     </React.Fragment>;
   } else {
-    return <p>{language.checkLang() === 'en'
-      ? 'Set speed and distance for fuel consumption calculations.'
-      : 'Aseta nopeus ja matkan pituus polttoaineen kulutuksen laskemiseksi.'}</p>;
+    return <section className='estimate' >
+      <p>{language.checkLang() === 'en'
+        ? 'Set speed and distance for fuel consumption calculations.'
+        : 'Aseta nopeus ja matkan pituus polttoaineen kulutuksen laskemiseksi.'}</p>
+    </section>;
   }
+};
+
+const CarData = ({name, consumption}) => {
+  return <React.Fragment>
+    <section className='data' style={{marginTop: '1em'}}>
+      <p>Auto: </p>
+      <p>{name}</p>
+    </section>
+    <section className='data'>
+      <p>Ilmoitettu keskikulutus: </p>
+      <p>{consumption} l / 100km</p>
+    </section>
+  </React.Fragment>;
 };
 
 const Car = (props) => {
@@ -74,14 +89,7 @@ const Car = (props) => {
   const lang = language.checkLang();
 
   return <article id={`${id}`} className='car'>
-    <section className='data'>
-      <p>Auto: </p>
-      <p>{lang === 'en' ? name[1] : name[0]}</p>
-    </section>
-    <section className='data'>
-      <p>Ilmoitettu keskikulutus: </p>
-      <p>{consumption} l / 100km</p>
-    </section>
+    <CarData name={lang === 'en' ? name[1] : name[0]} consumption={consumption} />
     <SpeedSelector setSpeed={setSpeed} speed={speed} />
     <TimeEstimate speed={speed} />
     <ConsumptionEstimate speed={speed} baseConsumption={consumption}/>

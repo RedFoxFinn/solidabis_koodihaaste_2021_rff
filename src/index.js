@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './app';
+import idGen from './tools/idGen';
+import packageInfo from '../package.json';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App id={idGen(packageInfo.appId, 'app')}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
