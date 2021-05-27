@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.4.0...v0.5.0) (2021-05-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* language selection capabilities removed
+
+* removed obsolete tools; removed language selection capabilities, FI left; ([36b3358](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/commit/36b33582c63991cbc44620daac359b225999c014))
+
 ## [0.4.0](https://github.com/RedFoxFinn/solidabis_koodihaaste_2021_rff/compare/v0.3.0...v0.4.0) (2021-05-27)
 
 
