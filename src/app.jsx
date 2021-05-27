@@ -6,27 +6,16 @@ import {
 } from 'react-router-dom';
 
 import Header from './components/header';
-import language from './tools/language';
 import {CalculatorProvider} from './controllers/calculator';
 import packageinfo from '../package.json';
 import './styles/components.css';
 import './styles/global.css';
-import Navigation from './components/navigation';
 import Calculator from './components/calculator';
 import useWindowDimensions from './hooks/windowDimensionsHook';
 import idGen from './tools/idGen';
 
 const App = (props) => {
   const { height, width } = useWindowDimensions();
-  const [lang, setLang] = useState();
-  useEffect(() => {
-    const selection = language.checkLang();
-    if (language.languages().includes(selection)) {
-      setLang(selection);
-    } else {
-      setLang('fi');
-    }
-  },[]);
 
   function isMobile() {
     return width >= 720 ? false : true;
@@ -35,12 +24,8 @@ const App = (props) => {
   return <article className='app' style={{height: height, maxWidth: width}}>
     <Router id={`${props.id}`}>
       <CalculatorProvider>
-        <Header id={`${idGen(props.id, 'header')}`} language={lang} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
-        <Navigation language={lang} id={idGen(props.id, 'navigator')} />
-        <Switch>
-          <Route exact path='/' children={<React.Fragment><Calculator mobile={isMobile()}/></React.Fragment>} />
-          <Route path='/task' children={<React.Fragment><h1>task</h1></React.Fragment>} />
-        </Switch>
+        <Header id={`${idGen(props.id, 'header')}`} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
+        <Calculator mobile={isMobile()}/>
       </CalculatorProvider>
     </Router>
   </article>;

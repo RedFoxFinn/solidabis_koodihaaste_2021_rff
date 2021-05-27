@@ -2,17 +2,17 @@
   "cars": [
     {
       "id": "car.default.a",
-      "name": ["Auto A", "Car A"],
+      "name": "Auto A",
       "consumption": 3
     },
     {
       "id": "car.default.b",
-      "name": ["Auto B", "Car B"],
+      "name": "Auto B",
       "consumption": 3.5
     },
     {
       "id": "car.default.c",
-      "name": ["Auto C", "Car C"],
+      "name": "Auto C",
       "consumption": 4
     }
   ]

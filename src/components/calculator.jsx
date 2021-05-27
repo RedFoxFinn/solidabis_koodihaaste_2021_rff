@@ -24,10 +24,11 @@ const RenderCars = ({mobile}) => {
 };
 
 const Calculator = (props) => {
+  const {id, mobile} = props;
   return <section style={{display: 'flex', flexDirection: 'column'}}>
-    <p>[mobile]</p>
+    <p>{mobile ? '[mobile]' : '[desktop]'}</p>
     <DistanceSelector/>
-    <RenderCars mobile={props.mobile}/>
+    <RenderCars mobile={mobile}/>
   </section>;
 };
 

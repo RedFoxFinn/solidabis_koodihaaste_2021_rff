@@ -6,12 +6,11 @@ import { isCompositeComponentWithType } from 'react-dom/test-utils';
 
 const url = 'http://localhost:3000';
 const name = 'RFF';
-const lang = ['en', 'fi'];
 const id = 'rff.test.header';
 
-describe('Header test suite, fi', () => {
+describe('Header test suite', () => {
   let dummy = false;
-  beforeEach(() => render(<Header id={id} authorName={name} authorUrl={url} lang={lang[1]} />));
+  beforeEach(() => render(<Header id={id} authorName={name} authorUrl={url} />));
   it('dummy', () => {
     expect(dummy).toBe(false);
     dummy = true;

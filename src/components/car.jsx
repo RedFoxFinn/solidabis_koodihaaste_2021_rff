@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import {useCalculator} from '../controllers/calculator';
-import language from '../tools/language';
 import '../styles/components.css';
 
 const consumption_gradient = 1.009;
@@ -31,9 +30,7 @@ const TimeEstimate = ({speed}) => {
       </section>;
   } else {
     return <section className='estimate'>
-      <p>{language.checkLang() === 'en'
-        ? 'Set speed and distance for travel time calculations.'
-        : 'Aseta nopeus ja matkan pituus matka-ajan laskemiseksi.'}</p>
+      <p>Aseta nopeus ja matkan pituus matka-ajan laskemiseksi.</p>
     </section>;
   }
 };
@@ -59,9 +56,7 @@ const ConsumptionEstimate = ({baseConsumption, speed}) => {
     </React.Fragment>;
   } else {
     return <section className='estimate' >
-      <p>{language.checkLang() === 'en'
-        ? 'Set speed and distance for fuel consumption calculations.'
-        : 'Aseta nopeus ja matkan pituus polttoaineen kulutuksen laskemiseksi.'}</p>
+      <p>Aseta nopeus ja matkan pituus polttoaineen kulutuksen laskemiseksi.</p>
     </section>;
   }
 };
@@ -86,10 +81,9 @@ const Car = (props) => {
     name
   } = props;
   const [speed, setSpeed] = useState(1);
-  const lang = language.checkLang();
 
-  return <article id={`${id}`} className='car'>
-    <CarData name={lang === 'en' ? name[1] : name[0]} consumption={consumption} />
+  return <article id={`${id}`} data-testid={`${id}`} className='car'>
+    <CarData name={name} consumption={consumption} />
     <SpeedSelector setSpeed={setSpeed} speed={speed} />
     <TimeEstimate speed={speed} />
     <ConsumptionEstimate speed={speed} baseConsumption={consumption}/>
