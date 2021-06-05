@@ -2,7 +2,8 @@ import React from 'react';
 
 import {useCalculator, actions} from '../../controllers/calculator';
 
-// This component has only one purpose: to be used for the testing of the code in the controllers/calculator.js -file
+// This component has only one purpose:
+//  to be used for the testing of the code in the controllers/calculator.js -file
 
 const TestComponent = (props) => {
   const {state, dispatch} = useCalculator();

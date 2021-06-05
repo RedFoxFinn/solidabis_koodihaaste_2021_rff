@@ -29,77 +29,44 @@ describe('tool unit tests - idGen', () => {
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.app.footer`);
   });
-  it('navigator', () => {
-    const gen = idGen(`${appId}`, 'navigator');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.app.navigator`);
-  });
-  it('home', () => {
-    const gen = idGen(`${appId}`, 'home');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.app.home`);
-  });
-  it('about', () => {
-    const gen = idGen(`${appId}`, 'about');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.app.about`);
-  });
-  it('navHome', () => {
-    const gen = idGen(`${appId}`, 'navHome');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.navHome`);
-  });
-  it('navAbout', () => {
-    const gen = idGen(`${appId}`, 'navAbout');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.navAbout`);
-  });
   it('car', () => {
     const gen = idGen(`${appId}`, 'car', 5);
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.car.5`);
   });
-  it('text', () => {
-    const gen = idGen(`${appId}`, 'text', 1);
+  it('speedForm', () => {
+    const gen = idGen(`${appId}`,'speedForm');
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.text.1`);
+    expect(gen).toMatch(`${appId}.speedForm`);
   });
-  it('shortText', () => {
-    const gen = idGen(`${appId}`, 'shortText', 2);
+  it('speedSelector', () => {
+    const gen = idGen(`${appId}`,'speedSelector');
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.shortText.2`);
+    expect(gen).toMatch(`${appId}.speedSelector`);
   });
-  it('longText', () => {
-    const gen = idGen(`${appId}`, 'longText', 3);
+  it('travelTimeEstimate', () => {
+    const gen = idGen(`${appId}`, 'travelTimeEstimate');
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.longText.3`);
+    expect(gen).toMatch(`${appId}.travelTimeEstimate`);
   });
-  it('headerText', () => {
-    const gen = idGen(`${appId}`, 'headerText');
+  it('tripConsumption', () => {
+    const gen = idGen(`${appId}`, 'tripConsumption');
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.headerText`);
+    expect(gen).toMatch(`${appId}.tripConsumption`);
+  });
+  it('averageConsumption', () => {
+    const gen = idGen(`${appId}`, 'averageConsumption');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.averageConsumption`);
+  });
+  it('totalConsumption', () => {
+    const gen = idGen(`${appId}`, 'totalConsumption');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.totalConsumption`);
   });
   it('detailText', () => {
     const gen = idGen(`${appId}`, 'detailText', 4);
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.detailText.4`);
-  });
-  it('packageText', () => {
-    const gen = idGen(`${appId}`, 'packageText', 2);
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.packageText.2`);
-  });
-  it('selectors', () => {
-    const gen = idGen(`${appId}`, 'selectors');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.selectors`);
-  });
-  it('languageSelector', () => {
-    let gen = idGen(`${appId}`, 'languageSelector','en');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.language.en`);
-    gen = idGen(`${appId}`, 'languageSelector','fi');
-    expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.language.fi`);
   });
 });

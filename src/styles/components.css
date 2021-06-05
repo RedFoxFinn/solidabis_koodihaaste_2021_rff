@@ -61,23 +61,26 @@
 }
 
 .car {
-  width: 20em;
   display: block;
   margin: 0.5em 1.5em;
-  outline: 1px solid rgba(0,0,0,0.1);
+  outline: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 4px 5px rgba(0,0,0,0.24);
+  float: left;
 }
 
 .car:hover {
-  outline: 1px solid rgba(0,0,0,0.5);
+  outline: 1px solid rgba(0,0,0,0.3);
+  box-shadow: 0 6px 7px rgba(0,0,0,0.48);
+}
+
+.mobile {
+  width: 40%;
+}
+
+.desktop {
+  width: 23%;
 }
 
 .carList {
-  display: inline-flex;
+  width: 90%;
 }
-
-.carListMobile {
-  display: flex;
-  flex-direction: column;
-}
-
-.calculator {}

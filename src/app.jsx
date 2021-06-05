@@ -1,9 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {
-  HashRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
 
 import Header from './components/header';
 import {CalculatorProvider} from './controllers/calculator';
@@ -22,12 +17,10 @@ const App = (props) => {
   }
 
   return <article className='app' style={{height: height, maxWidth: width}}>
-    <Router id={`${props.id}`}>
-      <CalculatorProvider>
-        <Header id={`${idGen(props.id, 'header')}`} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
-        <Calculator mobile={isMobile()}/>
-      </CalculatorProvider>
-    </Router>
+    <CalculatorProvider>
+      <Header id={`${idGen(props.id, 'header')}`} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
+      <Calculator mobile={isMobile()}/>
+    </CalculatorProvider>
   </article>;
 };
 

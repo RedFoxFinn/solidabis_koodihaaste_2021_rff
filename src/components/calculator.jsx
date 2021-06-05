@@ -4,6 +4,9 @@ import {useCalculator, actions} from '../controllers/calculator';
 import Car from './car';
 import '../styles/components.css';
 import {cars} from '../data/cars.json';
+import idGen from '../tools/idGen';
+
+// 
 
 const DistanceSelector = () => {
   const {dispatch, state} = useCalculator();
@@ -17,18 +20,21 @@ const DistanceSelector = () => {
   </form>;
 };
 
-const RenderCars = ({mobile}) => {
+const RenderCars = ({mobile, baseId}) => {
   return <section className={mobile ? 'carListMobile' : 'carList'}>
-    {cars.map(car => <Car key={`${car.id}.render`} id={`${car.id}`} consumption={car.consumption} name={car.name} />)}
+    {cars.map(car => {
+      const id = idGen(baseId, 'car',car.id);
+      return <Car key={`${id}`} id={`${id}`} consumption={car.consumption} name={car.name} />;
+    })}
   </section>
 };
 
 const Calculator = (props) => {
   const {id, mobile} = props;
   return <section style={{display: 'flex', flexDirection: 'column'}}>
-    <p>{mobile ? '[mobile]' : '[desktop]'}</p>
+    {process.env.NODE_ENV !== 'production' && <p>{mobile ? '[mobile]' : '[desktop]'}</p>}
     <DistanceSelector/>
-    <RenderCars mobile={mobile}/>
+    <RenderCars mobile={mobile} baseId={`${id}`}/>
   </section>;
 };
 
