@@ -8,6 +8,7 @@ import './styles/global.css';
 import Calculator from './components/calculator';
 import useWindowDimensions from './hooks/windowDimensionsHook';
 import idGen from './tools/idGen';
+import {cars} from './data/cars.json';
 
 const App = (props) => {
   const { height, width } = useWindowDimensions();
@@ -19,7 +20,7 @@ const App = (props) => {
   return <article className='app' style={{height: height, maxWidth: width}}>
     <CalculatorProvider>
       <Header id={`${idGen(props.id, 'header')}`} authorName={packageinfo.author.name} authorUrl={packageinfo.author.url} />
-      <Calculator mobile={isMobile()}/>
+      <Calculator mobile={isMobile()} carData={cars} />
     </CalculatorProvider>
   </article>;
 };

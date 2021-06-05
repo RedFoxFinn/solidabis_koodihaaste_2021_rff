@@ -1,0 +1,19 @@
+{
+  "cars": [
+    {
+      "id": "car.test.a",
+      "name": "Testiauto A",
+      "consumption": 3.5
+    },
+    {
+      "id": "car.test.b",
+      "name": "Testiauto B",
+      "consumption": 7.3
+    },
+    {
+      "id": "car.test.c",
+      "name": "Testiauto C",
+      "consumption": 10.9
+    }
+  ]
+}

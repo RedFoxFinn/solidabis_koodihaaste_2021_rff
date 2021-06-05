@@ -64,9 +64,9 @@ describe('tool unit tests - idGen', () => {
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.totalConsumption`);
   });
-  it('detailText', () => {
-    const gen = idGen(`${appId}`, 'detailText', 4);
+  it('distanceSelector', () => {
+    const gen = idGen(`${appId}`, 'distanceSelector');
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.detailText.4`);
+    expect(gen).toMatch(`${appId}.distanceSelector`);
   });
 });

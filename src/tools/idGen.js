@@ -18,7 +18,7 @@ const idGen = (parentId, idFor, ...rest) => {
     case 'tripConsumption': return `${parentId}.tripConsumption`;
     case 'averageConsumption': return `${parentId}.averageConsumption`;
     case 'totalConsumption': return `${parentId}.totalConsumption`;
-    case 'detailText': return `${parentId}.detailText.${rest[0]}`;
+    case 'distanceSelector': return `${parentId}.distanceSelector`;
     default: return `${parentId}.default`;
   }
 };
